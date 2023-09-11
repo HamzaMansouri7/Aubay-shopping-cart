@@ -12,7 +12,7 @@ describe('CartItemControlComponent', () => {
     id: '1',
     name: 'Test Product',
     price: 10,
-    imgUrl: 'https://shorturl.at/mtwMP', // Add imgUrl property here
+    imgUrl: 'https://shorturl.at/mtwMP',
   };
   const mockCartItem: any = {
     amount: 1,
