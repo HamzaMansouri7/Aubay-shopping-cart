@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col">
+    <products-list [products]="products$ | async">
+      <ng-container *forProduct="let product; ofType: 'default'">
+        <div class="d-flex">
+          <div class="product-image">
+            <img src="{{product.imgUrl}}" alt="product image">
+          </div>
+          <h4>{{ product.name }} (custom default)</h4>
+          <cart-item-control class="ml-auto" [product]="product"></cart-item-control>
+        </div>
+      </ng-container>
+
+      <ng-container *forProduct="let product; ofType: 'promo'">
+        <div class="d-flex">
+          <div class="product-image">
+            <img src="{{product.imgUrl}}" alt="product image">
+          </div>
+          <h4>{{ product.name }} ({{ product.type }})</h4>
+          <cart-item-control class="ml-auto" [product]="product"></cart-item-control>
+        </div>
+      </ng-container>
+
+      <ng-container *forProduct="let product; ofType: 'outlet'">
+        <div class="d-flex">
+          <div class="product-image">
+            <img src="{{product.imgUrl}}" alt="product image">
+          </div>
+          <h4>{{ product.name }} ({{ product.type }})</h4>
+          <cart-item-control class="ml-auto" [product]="product"></cart-item-control>
+        </div>
+      </ng-container>
+    </products-list>
+  </div>
+  <hr />
+  <div class="col-3">
+    <div class="card rounded-0">
+      <div class="card-body">
+        <h4 class="card-title">In Cart</h4>
+      </div>
+      <cart-widget></cart-widget>
+    </div>
+  </div>
+</div>

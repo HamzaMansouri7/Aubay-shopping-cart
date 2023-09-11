@@ -1,0 +1,19 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.product-image{
+    border: 1px solid rgb(175, 174, 174);
+     padding: 1rem;
+     margin-right: 1rem;
+
+    &.widget{
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0px;
+    }
+}
+.product-image img {
+    width: 75px;
+    height: 100%;
+}

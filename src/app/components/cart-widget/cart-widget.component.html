@@ -1,0 +1,15 @@
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let item of items$ | async">
+    <button class="close" (click)="cart.removeProduct(item.product, true)"> &times;</button>
+    <div class="product-image widget">
+      <img class="center" src="{{item.product.imgUrl}}" alt="product image">
+    </div>
+    <p class="pt-3">{{ item.product.name }} x {{ item.amount }}</p>
+    <small>{{ item.product.price | currency:'EUR':'symbol':'1.2-3':'fr' }} x {{ item.amount }} = {{ item.subtotal | currency:'EUR':'symbol':'1.2-3':'fr' }}</small>
+  </div>
+</div>
+<div class="text-center p-4 mt-2">
+  <h4>Total : {{ total$ | async | currency:'EUR':'symbol':'1.2-3':'fr' }}</h4>
+  <hr/>
+  <button class="btn btn-success">Checkout</button>
+</div>

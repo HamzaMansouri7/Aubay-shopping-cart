@@ -1,0 +1,12 @@
+<span *ngIf="item; else notInCart">
+  <button class="btn btn-danger rounded-0"
+          (click)="cart.removeProduct(product)">-</button>
+  <input  class="rounded-0"
+           disabled [value]="item.amount" />
+  <button class="btn btn-success rounded-0"
+          (click)="addProduct(product)">+</button>
+</span>
+<ng-template #notInCart>
+  <button class="btn btn-primary"
+          (click)="addProduct(product)">Add to Cart</button>
+</ng-template>
